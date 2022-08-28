@@ -1,4 +1,8 @@
 <template>
+  <!--  <div id="app">-->
+  <!--    <toolbar></toolbar>-->
+  <!--    <router-view></router-view>-->
+  <!--  </div>-->
   <div class="vue-tempalte">
     <!-- Navigation -->
     <nav
@@ -7,19 +11,22 @@
       <div class="container">
         <a
           class="navbar-brand float-left"
-          href="https://www.positronx.io"
+          href="https://blog.naver.com/gojgho"
           target="_blank"
+          style="color: #3CB371"
         >
-          positronX.io
+        MarinBom2
         </a>
         <ul class="nav navbar-nav flex-row float-right">
+          <li class="nav-item" v-if="this.check">
+            <router-link class="btn btn-outline-primary" to="/news">게시판</router-link>
+          </li>
+
           <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/login">Sign in</router-link>
+            <router-link class="btn btn-outline-secondary" to="/">로그인</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="btn btn-outline-primary" to="/"
-              >Sign up</router-link
-            >
+            <router-link class="btn btn-outline-secondary" to="/signup">회원가입</router-link>
           </li>
         </ul>
       </div>
@@ -35,3 +42,38 @@
     </div>
   </div>
 </template>
+<script>
+// import Toolbar from "@/components/Toolbar";
+import { commonAPI as com } from '@/api/index'
+
+
+
+export default {
+  name: 'App',
+  // components: {
+  //   Toolbar
+  // }
+  data() {
+    return {
+       check:'',
+    }
+  },
+  created() {
+    this.member()
+  },
+  methods: {
+
+    member() {
+      com.fetchNewsList().then(res => {
+        console.log(res);
+        this.check = res.data[0].name == 'gojgho' ? true : false;
+
+      });
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>

@@ -3,7 +3,8 @@
 }
 
 body {
-  background: #2554ff !important;
+  /*background: #2554ff !important;*/
+  background-color: #3CB371  !important;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -35,8 +36,8 @@ html,
   margin: auto;
   background: #ffffff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  padding: 40px 55px 45px 55px;
-  border-radius: 15px;
+  padding: 45px 55px 15px 55px;
+  border-radius: 25px;
   transition: all 0.3s;
 }
 
@@ -66,7 +67,8 @@ label {
 }
 
 .forgot-password a {
-  color: #2554ff;
+  color: #3CB371;
+
 }
 
 .social-icons {
