@@ -20,29 +20,9 @@ const routes = [
     component: () => import('../components/ForgotPassword.vue'),
   },
   {
-    path: '/news',
-    name: 'NewsView',
-    component: () => import('@/views/NewsView.vue'),
-  },
-  {
-    path: '/ask',
-    name: 'AskView',
-    component: () => import('@/views/AskView.vue'),
-  },
-  {
-    path: '/jobs',
-    name: 'JobsView',
-    component: () => import('@/views/JobsView.vue'),
-  },
-  {
-    path: '/user',
-    name: 'UserView',
-    component: () => import('@/views/UserView.vue'),
-  },
-  {
-    path: '/item',
-    name: 'ItemView',
-    component: () => import('@/views/ItemView.vue'),
+    path: '/board',
+    name: 'Board',
+    component: () => import('@/views/Board.vue'),
   },
   {
     path: "/:catchAll(.*)",

@@ -1,8 +1,11 @@
+
 <template>
+
   <!--  <div id="app">-->
   <!--    <toolbar></toolbar>-->
   <!--    <router-view></router-view>-->
   <!--  </div>-->
+
   <div class="vue-tempalte">
     <!-- Navigation -->
     <nav
@@ -18,7 +21,7 @@
         MarinBom2
         </a>
         <ul class="nav navbar-nav flex-row float-right">
-          <li class="nav-item" v-if="this.check">
+          <li class="nav-item">
             <router-link class="btn btn-outline-primary" to="/news">게시판</router-link>
           </li>
 
@@ -42,11 +45,15 @@
     </div>
   </div>
 </template>
+
 <script>
-// import Toolbar from "@/components/Toolbar";
-import { commonAPI as com } from '@/api/index'
+import Vue from 'vue';
+import VueToast from 'vue-toast-notification';
 
-
+Vue.use(VueToast, {
+  // One of the options
+  position: 'top'
+})
 
 export default {
   name: 'App',
@@ -55,22 +62,17 @@ export default {
   // }
   data() {
     return {
-       check:'',
+       isLogin: false,
+      userToken: '',
     }
   },
   created() {
-    this.member()
   },
   methods: {
+    initToken(){
 
-    member() {
-      com.fetchNewsList().then(res => {
-        console.log(res);
-        this.check = res.data[0].name == 'gojgho' ? true : false;
-
-      });
-    }
-  }
+    },
+  },
 }
 </script>
 

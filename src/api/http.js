@@ -5,6 +5,7 @@ const getPromise = (method, uri, data = null, options = null) => {
 
 
     const config = {
+        contentType: 'application/json',
         method: method,
         url: uri,
         ...options,
